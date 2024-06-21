@@ -1,6 +1,15 @@
+import { contextProp } from "@/context/context";
+import { useContext } from "react";
+
+
 const Header = () => {
+    const { modalCreate, setModalCreate } = useContext(contextProp)
+    const handleOpenModalCreate = () => {
+        setModalCreate(!modalCreate)
+    }
+
     return (
-        <header className="absolute top-3 mb-30 max-w-screen-xl w-11/12">
+        <header className="absolute top-3 mb-30 max-w-screen-xl w-11/12 -z-10">
             <div className="relative h-12 w-full text-center">
                 <h1 className="capitalize md:text-5xl text-2xl lg:text-3xl font-bold text-center text-white relative z-20">
                     api controller
@@ -35,25 +44,26 @@ const Header = () => {
                     <input
                     type="text"
                     className="outline-none text-[20px] bg-transparent w-full text-white font-normal px-4"
+                    placeholder="Ingrese Url"
                     />
                 </div>
 
-                <button>
+                <button onClick={handleOpenModalCreate}>
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg> Create
                     </span>
                 </button>
                 
-                <button class="open-file">
-                    <span class="file-wrapper">
+                <button className="open-file">
+                    <span className="file-wrapper">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 71 67">
                         <path
-                            stroke-width="5"
+                            strokeWidth="5"
                             stroke="black"
                             d="M41.7322 11.7678L42.4645 12.5H43.5H68.5V64.5H2.5V2.5H32.4645L41.7322 11.7678Z"
                         ></path>
                         </svg>
-                        <span class="file-front"></span>
+                        <span className="file-front"></span>
                     </span>
                     Open file
                 </button>
