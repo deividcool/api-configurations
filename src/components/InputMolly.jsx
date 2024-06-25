@@ -14,7 +14,7 @@ export const InputMolly = ({nameapi,}) => {
     return (
         <div className='flex flex-col justify-center items-center'>
             <div className='flex justify-end items-end'>
-                <input type="text" value={value} onChange={handleChange} placeholder="##" className="border-b-2 border-b-[#6A6A6A] text-white bg-transparent outline-none h-8 w-10 text-3xl overflow-hidden text-center"/>
+                <input type="text" value={value} onChange={handleChange} placeholder="" className="border-b-2 border-b-[#6A6A6A] text-white bg-transparent outline-none h-8 w-10 text-3xl overflow-hidden text-center"/>
             <h6 className='text-[#6A6A6A] font-bold'>%</h6>
             </div>
             <h4 className='text-[#6A6A6A] font-bold'>{nameapi}</h4>
