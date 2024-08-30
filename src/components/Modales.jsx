@@ -2,8 +2,11 @@ import { InputMolly } from './InputMolly';
 import { ContentApis } from './ContentApis';
 import Search from '@/assets/search.svg'
 import { ControlApiCountries } from './Countries';
+import { ContentConfig } from './ContentConfig';
+import { AvatarName } from './Avatar';
+import ScrollableContainer from './ScrollableContainer';
 
-export const DialogCreate = () => {
+export const DialogCreateold = () => {
 
     return (
         <dialog className="flex w-full h-full items-center justify-center bg-black/80">
@@ -64,6 +67,38 @@ export const DialogCreate = () => {
 
                         </div>
 
+                    </div>
+                </div>
+            </div>
+        </dialog>
+    )
+}
+
+
+export const DialogCreate = () => {
+    return (
+        <dialog className="flex w-full h-full items-center justify-center bg-black/80">
+            <div className="bg-[#0D0F14] sm:w-3/5 md:w-5/6 rounded-lg shadow-md box-content sm:p-10 p-2 w-10/12 max-w-[800px]">
+                <div className="flex flex-1 w-full flex-col box-content sm:flex-col justify-center items-center">
+                    <div className="flex flex-1 justify-center items-center p-10 box-content">
+                        <input type="text" placeholder="INGRESE ULR" className="bg-transparent outline-none border-b border-b-[#6A6A6A] text-[#6A6A6A] sm:w-96 w-64" />
+                    </div>
+                    <div className='flex flex-1 justify-center items-center w-full flex-col p-3 gap-5'> 
+                        {/* <ContentConfig /> */}
+                        <div className="grid grid-cols-5 grid-rows-5 gap-4 w-full">
+                            <div className="col-span-3 flex-col">
+                                <h2 className='text-white text-xl font-bold'>ELIJE CONFIGURACION DE API</h2>
+                                <ScrollableContainer />                              
+                            </div>
+                            <div className="col-span-3 col-start-1 row-start-2">2</div>
+                            <div className="col-span-5 col-start-1 row-start-3">3</div>
+                            <div className="col-span-5 col-start-1 row-start-4">4</div>
+                            <div className="col-span-5 col-start-1 row-start-5">5</div>
+                            <div className="col-span-2 row-span-2 col-start-4 row-start-1">6</div>
+                        </div>
+                        {/* <button className='flex justify-center items-center p-4 m-0 bg-transparent border-none shadow-xl rounded-lg bg-slate-600 hover:bg-blue-700/25 text-white'>
+                            + AÑADIR
+                        </button> */}
                     </div>
                 </div>
             </div>
