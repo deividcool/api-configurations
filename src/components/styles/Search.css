@@ -1,0 +1,133 @@
+.search-container {
+  position: relative;
+  width: 290px;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+.search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 50%;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-icon svg {
+  fill: #fff;
+}
+
+.search-icon:hover {
+  background-color: #555;
+}
+
+.search-bar:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.search-bar:focus-within {
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.country-list {
+  position: absolute;
+  top: 60px; /* Ajusta según el tamaño de tu search-bar */
+  left: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: scroll;
+  background-color: #555;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  display: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.country-list.visible {
+  display: block;
+}
+
+.country-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.country-item:last-child {
+  border-bottom: none;
+}
+
+.country-flag {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.text-white {
+  color: #fff;
+}
+
+/* Agrega esto en tu archivo CSS o en el estilo en línea del componente */
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Safari y Chrome */
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.deletemessage {
+  display: none;
+  position: absolute;
+  top: -8px;
+  right: -20;
+  width: 25px;
+  opacity: 0;
+}
+
+/* CSS */
+.country-flag {
+  transition: opacity 0.3s ease;
+}
+
+button:hover .country-flag {
+  opacity: 0; 
+}
+
+button:hover .deletemessage {
+  display: flex; 
+  opacity: 1;
+}
+

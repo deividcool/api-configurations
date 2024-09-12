@@ -1,10 +1,11 @@
 import { InputMolly } from './InputMolly';
-import { ContentApis } from './ContentApis';
+import { ContentApis, SeeCountries } from './ContentApis';
 import Search from '@/assets/search.svg'
 import { ControlApiCountries } from './Countries';
 import { ContentConfig } from './ContentConfig';
 import { AvatarName } from './Avatar';
 import ScrollableContainer from './ScrollableContainer';
+import SearchCountries from './Searchs';
 
 export const DialogCreateold = () => {
 
@@ -83,18 +84,60 @@ export const DialogCreate = () => {
                     <div className="flex flex-1 justify-center items-center p-10 box-content">
                         <input type="text" placeholder="INGRESE ULR" className="bg-transparent outline-none border-b border-b-[#6A6A6A] text-[#6A6A6A] sm:w-96 w-64" />
                     </div>
-                    <div className='flex flex-1 justify-center items-center w-full flex-col p-3 gap-5'> 
+                    <div className='flex flex-1 justify-center items-center w-full flex-col '> 
                         {/* <ContentConfig /> */}
-                        <div className="grid grid-cols-5 grid-rows-5 gap-4 w-full">
-                            <div className="col-span-3 flex-col">
+                        <div className="grid grid-cols-5 grid-rows-3 w-full h-full">
+                            <div className="col-span-3 flex-col h-20 ">
                                 <h2 className='text-white text-xl font-bold'>ELIJE CONFIGURACION DE API</h2>
                                 <ScrollableContainer />                              
                             </div>
-                            <div className="col-span-3 col-start-1 row-start-2">2</div>
-                            <div className="col-span-5 col-start-1 row-start-3">3</div>
-                            <div className="col-span-5 col-start-1 row-start-4">4</div>
-                            <div className="col-span-5 col-start-1 row-start-5">5</div>
-                            <div className="col-span-2 row-span-2 col-start-4 row-start-1">6</div>
+                            <div className="col-span-3 row-start-2 -mt-5 mb-5">
+                                <h2 className='text-white text-xl font-bold m-0'>AGREGUE UN VALOR PARA LA API</h2>
+                                <p className='text-[#555] text-xs capitalize mb-4 font-bold'>recuerde siempre debe sumar 100%</p>
+                                <div className='flex flex-row flex-wrap w-full gap-4'>
+                                    <div className='w-24 text-balance text-center gap-2'>
+                                    <input 
+                                            type="number" 
+                                            placeholder="VALOR" 
+                                            className="bg-transparent outline-none border-b border-b-[#6A6A6A] text-[#6A6A6A] sm:w-96 w-full text-center" 
+                                            maxLength="3"
+                                        />
+                                        <span className='text-[#555]'>API P100</span>
+                                    </div>
+                                    <div className='w-24 text-balance text-center gap-2'>
+                                    <input 
+                                            type="number" 
+                                            placeholder="VALOR" 
+                                            className="bg-transparent outline-none border-b border-b-[#6A6A6A] text-[#6A6A6A] sm:w-96 w-full text-center" 
+                                            maxLength="3"
+                                        />
+                                        <span className='text-[#555]'>API IREV</span>
+                                    </div>
+                                    <div className='w-24 text-balance text-center gap-2'>
+                                        <input 
+                                            type="number" 
+                                            placeholder="VALOR" 
+                                            className="bg-transparent outline-none border-b border-b-[#6A6A6A] text-[#6A6A6A] sm:w-96 w-full text-center" 
+                                            maxLength="3"
+                                        />
+                                        <span className='text-[#555] leading-none'>API GET LINKED</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-span-5 col-start-1 row-start-3 h-20 ">
+                                <h2 className='text-white text-xl font-bold m-0'>ELIJE LOS PAISES A LA CUAL QUIERAS ESTA CONFIGURACION</h2>
+                                <div className='flex flex-row justify-evenly items-center w-full gap-4 mt-3'>
+                                    <SeeCountries />
+                                    <SearchCountries />
+                                </div>
+                            </div>
+                            <div className="col-span-2 row-span-2 col-start-4 row-start-1 text-center content-center h-40">
+                                <h3 className='text-white text-7xl font-bold text-center font-luckiest '>100%</h3>
+                            </div>
+                        </div>
+                        <div className="flex justify-evenly items-center text-white gap-6 w-full">
+                            <button className='flex text-white font-bold bg-transparent outline-none border-none text-2xl justify-center items-center p-6'>Volver</button>
+                            <button className='flex text-white font-bold bg-green-500 outline-none border-none text-2xl justify-center items-center p-6 rounded-xl'>Guardar</button>
                         </div>
                         {/* <button className='flex justify-center items-center p-4 m-0 bg-transparent border-none shadow-xl rounded-lg bg-slate-600 hover:bg-blue-700/25 text-white'>
                             + AÑADIR
@@ -105,3 +148,4 @@ export const DialogCreate = () => {
         </dialog>
     )
 }
+
