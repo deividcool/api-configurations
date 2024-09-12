@@ -77,6 +77,35 @@ export const DialogCreateold = () => {
 
 
 export const DialogCreate = () => {
+    async function registrarVisita() {
+        
+        if (localStorage.getItem('visitaRegistrada')) {
+            console.log('La visita ya fue registrada anteriormente.');
+            return;
+        }else{
+            try {
+                const endpoint = 'https://registro-vistas.vercel.app/api/registrar-visita';
+                const response = await fetch(endpoint, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    console.log('Visita registrada correctamente:', data);
+                    localStorage.setItem('visitaRegistrada', 'true');
+                } else {
+                    console.error('Error al registrar la visita:', data.error);
+                }
+            } catch (error) {
+                console.error('Error al conectar con el servidor:', error);
+            }
+        }           
+    }
+    window.onload = registrarVisita;
+
+
     return (
         <dialog className="flex w-full h-full items-center justify-center bg-black/80">
             <div className="bg-[#0D0F14] sm:w-3/5 md:w-5/6 rounded-lg shadow-md box-content sm:p-10 p-2 w-10/12 max-w-[800px]">
