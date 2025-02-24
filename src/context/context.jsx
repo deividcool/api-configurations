@@ -7,14 +7,14 @@ export const ContextProvider = ({ children }) => {
 
     const [ listUrl, setListUrl ] = useState([]);
     const [ modalCreate, setModalCreate ] = useState(false);
+    const [editData, setEditData] = useState(null);
 
     console.log(modalCreate)
 
     useEffect(() => {
-        // Definir la función fetchData dentro del useEffect
         const fetchData = async () => {
           try {
-            const response = await fetch(api_url+'api/list-urls');
+            const response = await fetch(api_url+'api/get-data');
             const result = await response.json();
             setListUrl(result);
           } catch (error) {
@@ -22,12 +22,11 @@ export const ContextProvider = ({ children }) => {
           }
         };
     
-        // Llamar a la función fetchData
         fetchData();
       }, []);
 
   return (
-    <contextProp.Provider value={{ listUrl, setModalCreate, modalCreate }}>
+    <contextProp.Provider value={{ listUrl, setModalCreate, modalCreate, setListUrl, setEditData, editData }}>
       {children}
     </contextProp.Provider>
   );
